@@ -87,7 +87,7 @@ class Localtinymce extends Field
 		}
 
 		if (! $this->uploadUrl) {
-			$this->toolbar = str_replace(' image ', '', $this->toolbar);
+			$this->toolbar = str_replace(' image ', ' ', $this->toolbar);
 		}
     }
 }
