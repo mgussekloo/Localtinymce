@@ -1,7 +1,8 @@
 # Localtinymce
 A simple, self-hosted TinyMCE with image uploads for Laravel Nova.
 
-I needed a simple, zero-config TinyMCE for Laravel Nova and this is what I came up with.
+I needed a simple, zero-config TinyMCE for Laravel Nova and this is what I came up with. It includes
+image uploads and a way to edit HTML (so it's easy to embed video's). No API keys required!
 
 ### Installation
 
@@ -29,13 +30,13 @@ public function fields(Request $request)
 
 ### Options
 
-By default, this uses a sensible toolbar and no file uploads.
+By default this uses a sensible toolbar and no file uploads.
 You can use withFiles() and withToolbar() to configure these options.
 
 ```php
     public function withFiles($disk = null, $dir = null)
     {
-      // The default storage disk is 'public', the default storage dir is 'uploads'. 
+      // The default storage disk is 'public', the default storage dir is 'uploads'.
     }
 
     public function withToolbar($toolbar)
@@ -47,7 +48,8 @@ You can use withFiles() and withToolbar() to configure these options.
 
 ### Uploading
 
-Uploading works very, very simple. This is what  happens in the upload controller:
+Uploading should just work out of the box! Enable it by using ->withFiles() on your field.
+The implementation is very basic. This is what  happens in the upload controller:
 
 ```php
 $name = $request->file('attachment')->store($field->storageDir, $field->storageDisk);
@@ -55,4 +57,8 @@ $url = Storage::disk( $field->storageDisk )->url( $name );
 return response()->json([
   'url' => $url
 ]);;
-```php
+```
+
+### TinyMCE
+
+Read about TinyMCE [here](https://www.tiny.cloud/).
