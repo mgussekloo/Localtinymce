@@ -18,7 +18,7 @@ class FieldServiceProvider extends ServiceProvider
     public function boot()
     {
          $this->publishes([
-            __DIR__.'/../vendor/tinymce' => public_path('vendor/localtinymce'),
+            base_path('vendor/tinymce') => public_path('vendor/localtinymce'),
         ], 'public');
 
         Nova::serving(function (ServingNova $event) {
