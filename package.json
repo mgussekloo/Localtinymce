@@ -1,13 +1,12 @@
 {
-    "name": "gusmanson/localtinymce",
-    "description": "Simple, self-hosted TinyMCE for Laravel Nova, with image uploads.",
+    "name": "localtinymce",
+    "description": "A simple, self-hosted TinyMCE with image uploads for Laravel Nova.",
     "authors": [
         {
             "name": "Martijn Gussekloo",
             "email": "mgussekloo@gusmanson.nl"
         }
     ],
-
     "private": true,
     "scripts": {
         "dev": "npm run development",

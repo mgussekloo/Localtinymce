@@ -42,13 +42,11 @@
 					'searchreplace visualblocks code fullscreen',
 					'insertdatetime media table paste code help wordcount'
 					],
-					toolbar:
-					'undo redo | formatselect | bold italic backcolor | \
-					alignleft aligncenter alignright alignjustify | \
-					bullist numlist outdent indent | removeformat | \
-					link %image% code',
+					toolbar: false,
 
-					relative_urls: false,
+					relative_urls : false,
+					remove_script_host : false,
+					convert_urls : true,
 					// automatic_uploads: true,
 				}
 			}
@@ -87,9 +85,10 @@
 		},
 
 		mounted() {
+			this.editorInit.toolbar = this.field.toolbar;
+
 			// if upload url is defined, prepare for uploading
 			if (this.field.upload_url) {
-				this.editorInit.toolbar = this.editorInit.toolbar.replace('%image%', 'image');
 				this.editorInit.images_upload_handler = this.images_upload_handler.bind(this);
 			}
 

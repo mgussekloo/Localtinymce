@@ -15,6 +15,11 @@ class Localtinymce extends Field
      */
     public $component = 'localtinymce';
 
+    public $toolbar = 'undo redo | formatselect | bold italic backcolor |
+    alignleft aligncenter alignright alignjustify |
+    bullist numlist outdent indent |
+    removeformat | link image code';
+
     public $scriptUrl = 'vendor/localtinymce/tinymce/tinymce.min.js';
 
     public $withFiles = false;
@@ -25,7 +30,7 @@ class Localtinymce extends Field
 
     public function __construct($name, $attribute = null, $resolveCallback = null)
     {
-        parent::__construct(null, $attribute, $resolveCallback);
+        parent::__construct($name, $attribute, $resolveCallback);
 
         $this->hideFromIndex();
     }
@@ -38,7 +43,8 @@ class Localtinymce extends Field
 
 		$this->withMeta([
 			'script_url' => url($this->scriptUrl),
-			'upload_url' => $this->uploadUrl
+			'upload_url' => $this->uploadUrl,
+			'toolbar' => $this->toolbar
 		]);
     }
 
@@ -57,12 +63,19 @@ class Localtinymce extends Field
         return $this;
     }
 
+    public function withToolbar($toolbar)
+    {
+    	$this->toolbar = $toolbar;
+    }
+
     public function withUploadUrl($url)
     {
     	$this->uploadUrl = $url;
     }
 
-    public function prepareUploadUrl()
+    // ---
+    //
+    private function prepareUploadUrl()
     {
     	if ($this->withFiles) {
 			if (! $this->uploadUrl) {
@@ -71,6 +84,10 @@ class Localtinymce extends Field
 			}
 		} else {
 			$this->uploadUrl = false;
+		}
+
+		if (! $this->uploadUrl) {
+			$this->toolbar = str_replace(' image ', '', $this->toolbar);
 		}
     }
 }
