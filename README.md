@@ -26,7 +26,7 @@ public function fields(Request $request)
     return [
         ID::make('ID', 'id')->sortable(),
         Text::make('Name', 'name'),
-        Localtinymce::make('Information', 'information')->withFiles('public');
+        Localtinymce::make('Information', 'information')->withFiles('public')
     ];
 }
 ```
