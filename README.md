@@ -51,8 +51,7 @@ You can use withFiles() and withToolbar() to configure these options.
 
 ### Uploading
 
-Uploading should just work out of the box! Enable it by using ->withFiles() on your field.
-The implementation is very basic. This is what  happens in the upload controller:
+Uploading should just work out of the box! Enable it by using ->withFiles() on your field. Defaults expect you to have [symlinked](https://laravel.com/docs/8.x/filesystem#the-public-disk) the public disk. The implementation is very basic. This is what  happens in the upload controller:
 
 ```php
 $name = $request->file('attachment')->store($field->storageDir, $field->storageDisk);
