@@ -1,0 +1,30 @@
+{
+    "name": "gusmanson/localtinymce",
+    "description": "A Laravel Nova field.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "tinymce/tinymce": ">= 5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gusmanson\\Localtinymce\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gusmanson\\Localtinymce\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
