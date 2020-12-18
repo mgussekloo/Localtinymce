@@ -6,6 +6,10 @@ image uploads and a way to edit HTML (so it's easy to embed video's). No API key
 
 ### Installation
 
+```bash
+composer require gusmanson/localtinymce
+```
+
 Publish the TinyMCE JS and CSS files.
 
 ```bash
