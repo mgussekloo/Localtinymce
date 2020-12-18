@@ -1,7 +1,7 @@
 # Localtinymce
 A simple, self-hosted TinyMCE with image uploads for Laravel Nova.
 
-I needed a simple, zero-config WYSIWYG-field for Laravel Nova. Trix was too restrictive and other solutions were too messy. This is what I came up with. It's based on TinyMCE 5. This package supports image uploads (working out of the box, without dependencies, API-keys) and lets users edit HTML directly (so video embeds works fine). The toolbar can be configured.
+I needed a simple, zero-config WYSIWYG-field for Laravel Nova. Trix was too restrictive and other solutions were too messy. This is what I came up with. It's based on TinyMCE 5. This package supports image uploads (working out of the box, without dependencies or API-keys) and lets users edit HTML directly (so video embeds works fine). The toolbar can be configured.
 
 ### Installation
 
