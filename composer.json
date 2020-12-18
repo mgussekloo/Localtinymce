@@ -1,6 +1,12 @@
 {
     "name": "gusmanson/localtinymce",
-    "description": "A Laravel Nova field.",
+    "description": "A simple, self-hosted TinyMCE with image uploads for Laravel Nova.",
+    "authors": [
+        {
+            "name": "Martijn Gussekloo",
+            "email": "mgussekloo@gusmanson.nl"
+        }
+    ],
     "keywords": [
         "laravel",
         "nova"
