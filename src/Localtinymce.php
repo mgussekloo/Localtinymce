@@ -66,11 +66,13 @@ class Localtinymce extends Field
     public function withToolbar($toolbar)
     {
     	$this->toolbar = $toolbar;
+        return $this;
     }
 
     public function withUploadUrl($url)
     {
     	$this->uploadUrl = $url;
+        return $this;
     }
 
     // ---
