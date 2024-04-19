@@ -1,6 +1,6 @@
 <template>
   <panel-item :field="field">
-    <template slot="value">
+    <template #value>
       <excerpt :content="field.value" :should-show="field.shouldShow" />
     </template>
   </panel-item>

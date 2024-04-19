@@ -1,4 +1,7 @@
-Nova.booting((Vue, router, store) => {
-  Vue.component('detail-localtinymce', require('./components/DetailField'))
-  Vue.component('form-localtinymce', require('./components/FormField'))
+import DetailField from './components/DetailField.vue'
+import FormField from './components/FormField.vue'
+
+Nova.booting((app, store) => {
+  app.component('detail-localtinymce', DetailField)
+  app.component('form-localtinymce', FormField)
 })

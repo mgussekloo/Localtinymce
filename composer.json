@@ -1,34 +1,51 @@
 {
     "name": "gusmanson/localtinymce",
     "description": "A simple, self-hosted TinyMCE with image uploads for Laravel Nova.",
-    "authors": [
+    "authors":
+    [
         {
             "name": "Martijn Gussekloo",
             "email": "mgussekloo@gusmanson.nl"
         }
     ],
-    "keywords": [
+    "keywords":
+    [
         "laravel",
         "nova"
     ],
     "license": "MIT",
-    "require": {
-        "php": ">=7.1.0",
+    "require":
+    {
+        "php": "^8.0",
+        "laravel/nova": "^4.0",
         "tinymce/tinymce": ">= 5"
     },
-    "autoload": {
-        "psr-4": {
+    "autoload":
+    {
+        "psr-4":
+        {
             "Gusmanson\\Localtinymce\\": "src/"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
+    "repositories":
+    [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "extra":
+    {
+        "laravel":
+        {
+            "providers":
+            [
                 "Gusmanson\\Localtinymce\\FieldServiceProvider"
             ]
         }
     },
-    "config": {
+    "config":
+    {
         "sort-packages": true
     },
     "minimum-stability": "dev",

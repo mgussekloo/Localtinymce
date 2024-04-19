@@ -1,6 +1,6 @@
 <template>
 	<default-field :field="field" :errors="errors" :show-help-text="showHelpText" :full-width-content="true">
-		<template slot="field">
+		<template #field>
 
 			<div v-if="loaded">
 				<editor

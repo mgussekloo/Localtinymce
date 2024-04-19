@@ -1,29 +1,35 @@
 {
     "name": "localtinymce",
     "description": "A simple, self-hosted TinyMCE with image uploads for Laravel Nova.",
-    "authors": [
+    "authors":
+    [
         {
             "name": "Martijn Gussekloo",
             "email": "mgussekloo@gusmanson.nl"
         }
     ],
     "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "scripts":
+    {
+        "dev": "mix",
+        "watch": "mix watch -- --watch-options-poll=1000",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "production": "mix --production",
+        "nova:install": "npm --prefix='../../vendor/laravel/nova' ci"
     },
-    "devDependencies": {
-        "cross-env": "^5.0.0",
-        "laravel-mix": "^1.0",
-        "laravel-nova": "^1.0"
+    "devDependencies":
+    {
+        "cross-env": "^7.0.3",
+        "laravel-mix": "^6.0",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.75.0",
+        "sass-loader": "^12.1.0",
+        "vue-loader": "^16.2.0"
     },
-    "dependencies": {
-        "@tinymce/tinymce-vue": "^3.2.6",
-        "vue": "^2.5.0"
+    "dependencies":
+    {
+        "@tinymce/tinymce-vue": "^5.1.1",
+        "vue": "^3.4.23"
     }
 }
